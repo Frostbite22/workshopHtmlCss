@@ -2,6 +2,24 @@
 
 window.addEventListener('load', function() 
 {
+
+    //adding and removing class for the navbar
+    var navElements = document.getElementsByClassName("nav")[0].children; 
+   
+    Array.from(navElements).forEach(function clickedOne(ancre){ 
+        ancre.addEventListener("click",function changeActive(){
+            for(let ancre of navElements)
+            {
+                ancre.classList = "" ; 
+            }
+            console.log(ancre.classlist) ; 
+            ancre.classList = "active" ; 
+ 
+        });
+    });
+    
+
+
 var buttons = document.getElementsByClassName("send") ; 
 //Buttons are of Type htmlCollection ; we need to convert them to arrays 
 // so we can use the method forEach 
@@ -31,6 +49,8 @@ Array.from(buttons).forEach(function getClicked(button){
     }); 
 });
 }); 
+
+
 
     
 
